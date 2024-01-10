@@ -1,0 +1,102 @@
+.menu_items {
+    list-style: none;
+}
+
+.item {
+    display: inline-block;
+    padding: 10px 0 10px;
+    vertical-align: middle;
+}
+
+.menu {
+    background: #000;
+}
+
+.logo {
+    color: white;
+}
+
+.menu_wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1300px;
+    margin: auto;
+    padding: 0 2rem;
+}
+
+.menu_links:hover,
+.menu_links:focus,
+.menu_links:active {
+    color: #C9C9C9;
+    text-decoration: none;
+}
+
+.menu_links {
+    font-family: 'Montserrat';
+    text-decoration: none;
+    transition: color 0.1s, background-color 0.1s;
+    position: relative;
+    display: block;
+    padding: 16px 0;
+    margin: 0 12px;
+    letter-spacing: 1px;
+    font-size: 0.85rem;
+    line-height: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: color 0.1s, background-color 0.1s, padding 0.2s ease-in;
+    color: white;
+}
+
+.menu_links::before {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 3px;
+    left: 0;
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    transform-origin: right top;
+    transform: scale(0, 1);
+    transition: color 0.1s, transform 0.2s ease-out;
+}
+
+.menu_links:active::before {
+    background-color: #000;
+}
+
+.menu_links:hover::before,
+.menu_links:focus::before {
+    transform-origin: left top;
+    transform: scale(1, 1);
+}
+
+.cart {
+    font-size: 1.3rem;
+    color: black;
+    margin: 0 0 -4px 1rem;
+    background: white;
+    padding: 0.65rem;
+    border-radius: 50px;
+    border: solid 2px transparent;
+    transition: all 0.5s;
+}
+
+.login {
+    background: white;
+    margin: 0 0 0 1rem;
+    padding: 0.75rem 1rem;
+    border-radius: 50px;
+    border: solid 2px transparent;
+    transition: all 0.5s;
+}
+
+.login:hover,
+.cart:hover {
+    color: white;
+    background: black;
+    border: solid 2px white;
+    box-shadow: 0 0 10px 2px #ffffff66;
+}
