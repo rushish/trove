@@ -1,6 +1,6 @@
 const Categories = () => {
     return (
-        <h1>Categories</h1>
+        <h1 className="gallero">Categories</h1>
     );
 }
 

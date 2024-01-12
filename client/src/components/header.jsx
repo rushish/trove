@@ -5,7 +5,7 @@ const Header = () => {
     return (
         <nav className={styles.menu}>
             <section className={styles.menu_wrapper}>
-                <h3 className={styles.logo}>TROVE.</h3>
+                <h2 className={styles.logo}>TROVE.</h2>
                 <section>
                     <ul className={styles.menu_items}>
                         <li className={styles.item}><a className={styles.menu_links} href="/">Home</a></li>

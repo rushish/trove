@@ -1,6 +1,8 @@
+import HeroSlider from "../components/heroSlider";
+
 const Home = () => {
     return (
-        <h1>Home</h1>
+        <HeroSlider />
     );
 }
 

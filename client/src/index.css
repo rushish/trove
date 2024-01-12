@@ -16,3 +16,15 @@ button {
   border: none;
   cursor: pointer;
 }
+
+@font-face {
+  font-family: 'Hanson';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Hanson'), url('./assets/fonts/hanson.otf') format('opentype');
+}
+
+.hanson {
+  font-family: 'Hanson';
+  line-height: 0.75;
+}
