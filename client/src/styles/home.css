@@ -1,0 +1,17 @@
+.section-title {
+    margin: 2rem 0 1rem 2rem;
+    font-size: 4rem;
+    font-weight: 900;
+}
+
+.grow {
+    height: 1.5px;
+    background: black;
+    margin: 0 0 2rem 2rem;
+    width: 300px;
+    transition: all 1s;
+}
+
+.underline:hover .grow {
+    width: 100%;
+}
