@@ -10,7 +10,6 @@ const ProductSlider = () => {
     const swiperParams = {
         modules: [Autoplay, FreeMode, Pagination],
         allowTouchMove: true,
-        slidesPerView: 4,
         spaceBetween: 45,
         speed: 800,
         freeMode: true,
@@ -20,6 +19,21 @@ const ProductSlider = () => {
         autoplay: {
             delay: 4500,
             disableOnInteraction: false,
+        },
+
+        breakpoints: {
+            1100: {
+                slidesPerView: 4,
+            },
+            1024: {
+                slidesPerView: 3,
+            },
+            768: {
+                slidesPerView: 2,
+            },
+            640: {
+                slidesPerView: 1,
+            },
         },
     };
     return (

@@ -89,3 +89,17 @@
     color: white;
     border: 1px solid black;
 }
+
+@media (max-width: 1024px) {
+    .prod-carousal {
+        max-width: 92%;
+        overflow-x: hidden;
+    }
+}
+
+@media (max-width: 650px) {
+    .prod-carousal {
+        max-width: 80%;
+        overflow-x: hidden;
+    }
+}

@@ -1,4 +1,5 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
+// import { useState, useEffect } from 'react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import './../styles/AestheticSlider.css';
@@ -7,12 +8,51 @@ import s1image from './../assets/images/slide1.jpg';
 
 const AestheticSlider = () => {
 
-    const s1bg = {
-        color: '#fff',
-        backgroundImage: `url(${s1image})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'top center',
-    };
+    const s1bg = [
+        {
+            color: '#fff',
+            backgroundImage: `url(${s1image})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'top center',
+        },
+        // Repeat the entry for additional sliders
+        {
+            color: '#fff',
+            backgroundImage: `url(${s1image})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'top center',
+        },
+        {
+            color: '#fff',
+            backgroundImage: `url(${s1image})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'top center',
+        },
+        {
+            color: '#fff',
+            backgroundImage: `url(${s1image})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'top center',
+        },
+    ];
+
+    //FETCH DATA FROM DATABASE
+    // const [slidesData, setSlidesData] = useState([]);
+
+    // useEffect(() => {
+    //     // Fetch data from your database API
+    //     const fetchData = async () => {
+    //         try {
+    //             const response = await fetch('your-api-endpoint');
+    //             const data = await response.json();
+    //             setSlidesData(data);
+    //         } catch (error) {
+    //             console.error('Error fetching data:', error);
+    //         }
+    //     };
+
+    //     fetchData();
+    // }, []);
 
     const swiperParams = {
         navigation: true,
@@ -28,11 +68,9 @@ const AestheticSlider = () => {
         },
         on: {
             slideChange: function () {
-                // Remove 'active' class from all slides
                 document.querySelectorAll('.swiper-slide').forEach((slide) => {
                     slide.classList.remove('active');
                 });
-                // Add 'active' class to the currently active slide
                 const activeSlide = document.querySelector('.swiper-slide-active');
                 activeSlide.classList.add('active');
             },
@@ -41,41 +79,15 @@ const AestheticSlider = () => {
     return (
         <>
             <Swiper {...swiperParams}>
-                <SwiperSlide style={s1bg}>
-                    <section className='slide-content'>
-                        <h1 className='hanson slide-title'>WINTER <br /><span className='slide-subtitle'>2024</span></h1>
-                        <p className='slide-desc'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sollicitudin vehicula sem et tincidunt. Cras in placerat enim. Donec interdum nisl vel malesuada molestie. Aliquam.</p>
-                        <button className='slide-button'><span class="noselect">VIEW COLLECTION</span></button>
-                    </section>
-                </SwiperSlide>
-                <SwiperSlide style={s1bg}>
-                    <section className='slide-content'>
-                        <h1 className='hanson slide-title'>WINTER <br /><span className='slide-subtitle'>2024</span></h1>
-                        <p className='slide-desc'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sollicitudin vehicula sem et tincidunt. Cras in placerat enim. Donec interdum nisl vel malesuada molestie. Aliquam.</p>
-                        <button className='slide-button'><span className="noselect">VIEW COLLECTION</span></button>
-                    </section>
-                </SwiperSlide>
-                <SwiperSlide style={s1bg}>
-                    <section className='slide-content'>
-                        <h1 className='hanson slide-title'>WINTER <br /><span className='slide-subtitle'>2024</span></h1>
-                        <p className='slide-desc'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sollicitudin vehicula sem et tincidunt. Cras in placerat enim. Donec interdum nisl vel malesuada molestie. Aliquam.</p>
-                        <button className='slide-button'><span class="noselect">VIEW COLLECTION</span></button>
-                    </section>
-                </SwiperSlide>
-                <SwiperSlide style={s1bg}>
-                    <section className='slide-content'>
-                        <h1 className='hanson slide-title'>WINTER <br /><span className='slide-subtitle'>2024</span></h1>
-                        <p className='slide-desc'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sollicitudin vehicula sem et tincidunt. Cras in placerat enim. Donec interdum nisl vel malesuada molestie. Aliquam.</p>
-                        <button className='slide-button'><span class="noselect">VIEW COLLECTION</span></button>
-                    </section>
-                </SwiperSlide>
-                <SwiperSlide style={s1bg}>
-                    <section className='slide-content'>
-                        <h1 className='hanson slide-title'>WINTER <br /><span className='slide-subtitle'>2024</span></h1>
-                        <p className='slide-desc'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sollicitudin vehicula sem et tincidunt. Cras in placerat enim. Donec interdum nisl vel malesuada molestie. Aliquam.</p>
-                        <button className='slide-button'><span class="noselect">VIEW COLLECTION</span></button>
-                    </section>
-                </SwiperSlide>
+                {s1bg.map((style, index) => (
+                    <SwiperSlide key={index} style={style}>
+                        <section className='slide-content'>
+                            <h1 className='hanson slide-title'>WINTER <br /><span className='slide-subtitle'>2024</span></h1>
+                            <p className='slide-desc'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sollicitudin vehicula sem et tincidunt. Cras in placerat enim. Donec interdum nisl vel malesuada molestie. Aliquam.</p>
+                            <button className='slide-button'><span className="noselect">VIEW COLLECTION</span></button>
+                        </section>
+                    </SwiperSlide>
+                ))}
             </Swiper>
         </>
     );
