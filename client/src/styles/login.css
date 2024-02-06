@@ -136,7 +136,7 @@
     position: absolute;
     top: 0;
     left: 50%;
-    width: 50%;
+    width: 60%;
     height: 100%;
     overflow: hidden;
     transition: all 0.6s ease-in-out;
@@ -168,7 +168,7 @@
 
 .toggle-panel {
     position: absolute;
-    width: 50%;
+    width: 60%;
     height: 100%;
     display: flex;
     align-items: center;
@@ -183,6 +183,8 @@
 
 .toggle-left {
     transform: translateX(-200%);
+    width: fit-content;
+    margin: auto 1.5rem;
 }
 
 .container.active .toggle-left {
