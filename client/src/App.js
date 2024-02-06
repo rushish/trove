@@ -5,6 +5,7 @@ import Categories from "./pages/categories";
 import Men from "./pages/men";
 import Women from "./pages/women";
 import Header from "./components/header";
+import Login from "./pages/login";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="categories" element={<Categories />} />
           <Route path="men" element={<Men />} />
           <Route path="women" element={<Women />} />
+          <Route path="login" element={<Login />} />
         </Routes>
       </BrowserRouter>
     </>
